@@ -1,0 +1,9 @@
+git init 
+git add .
+git commit -m "message"
+herocu login
+if heroku create
+else 
+git name
+
+git heroku push master 
