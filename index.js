@@ -31,10 +31,7 @@ if(process.env.NODE_ENV==='production'){
 
 
 }
-//By default
-app.get('/',(req,res) =>{
-    res.send({'welcome ':'Nilakash'})
-})
+
 const PORT=process.env.PORT || 5000
 console.log('Database Connection Established Port No-'+PORT)
 app.listen(PORT);
