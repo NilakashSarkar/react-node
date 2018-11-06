@@ -20,7 +20,7 @@ this.props.fetchUser();
         <Header/>
         <Route exact path='/' component={Landing}></Route>
         <Route path='/surveys/new' component={surveys}></Route>
-        <Route exact path='/surveys' component={Dashboard}></Route>
+        <Route  path='/surveys' component={Dashboard}></Route>
       
         </div>
         </BrowserRouter>
