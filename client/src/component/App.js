@@ -21,7 +21,6 @@ this.props.fetchUser();
         <Route exact path='/' component={Landing}></Route>
         <Route path='/surveys/new' component={surveys}></Route>
         <Route  path='/surveys' component={Dashboard}></Route>
-      
         </div>
         </BrowserRouter>
         
