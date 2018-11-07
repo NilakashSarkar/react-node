@@ -18,7 +18,7 @@ this.props.fetchUser();
         <BrowserRouter>
         <div>
         <Header/>
-        <Route exact path='/' component={Landing}></Route>
+        <Route path='/' component={Landing}></Route>
         <Route path='/surveys/new' component={surveys}></Route>
         <Route  path='/surveys' component={Dashboard}></Route>
         </div>
