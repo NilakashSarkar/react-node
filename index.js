@@ -4,6 +4,7 @@ const keys=require('./config/keys')
 const cookieSession=require('cookie-session')
 const passport=require('passport')
 const bodyParser=require('body-parser')
+const path=require('path');
 const app=express()
 
 require('./models/User')
@@ -24,10 +25,14 @@ require('./route/billingRoute')(app)
 // require('./route/registation')(app)
 if(process.env.NODE_ENV==='production'){
     app.use(express.static('client/build'));
-    const path=require('path');
+    // const path=require('path');
     app.get('*',(req,res)=>{
         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
     });
+}else{
+    app.get('/',(req,res)=>{
+        res.send('welcome')
+    })
 }
 
 const PORT=process.env.PORT || 5000
