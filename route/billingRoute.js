@@ -1,5 +1,5 @@
-const keys=require('../config/dev')
-const stripe=require('stripe')(keys.STRIPESECRETKEY);
+const keys=require('../config/keys')
+const stripe=require('stripe')(keys.stripeSecretkey);
 
 
 module.exports=app =>{

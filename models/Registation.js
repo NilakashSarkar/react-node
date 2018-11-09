@@ -1,7 +1,7 @@
 const validator=require('validator');
-
-const schema=mongoose.Schema
-const registationSchema=new schema({
+const mongoose=require('mongoose')
+const {Schema}=mongoose
+const registationSchema=new Schema({
           name:{
            type:String,
       
@@ -21,12 +21,7 @@ const registationSchema=new schema({
                                return validator.isEmail(v)
                  },
                  message:`{VALUE} Is Not Email`
-              }
+              }}})
 
 
-          }
-})
-
-
-const registationModel=mongoose.model('registation',registationSchema)
-module.exports=contactModel
+mongoose.model('registation',registationSchema)
