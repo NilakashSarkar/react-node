@@ -4,9 +4,9 @@ const stripe=require('stripe')(keys.stripeSecretkey);
 
 module.exports=app =>{
     app.post('/api/stripe',async(req,res)=>{ 
-        if(!req.user){
-            res.status(401).send({error:'You must log In'})
-        }
+        // if(!req.user){
+        //     res.status(401).send({error:'You must log In'})
+        // }
     const charge=await stripe.charges.create({
     amount:500,
     currency:'usd',

@@ -9,8 +9,10 @@ const app=express()
 
 require('./models/User')
 require('./services/passport')
+require('./models/Survey')
 
-mongoose.connect(keys.mongoURL)
+mongoose.connect(keys.mongoURL);
+
 app.use(bodyParser.json())
 app.use(cookieSession({
     maxAge:30 * 24 * 60 * 60 * 1000,
@@ -22,7 +24,9 @@ app.use(passport.session())
 
 require('./route/authRoute')(app)
 require('./route/billingRoute')(app)
-require('./route/registation')(app)
+require('./route/serveyRoute')(app)
+// require('./route/registation')(app)
+
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));
     // const path=require('path');
