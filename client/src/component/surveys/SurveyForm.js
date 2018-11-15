@@ -8,6 +8,7 @@ import _ from 'lodash';
 
 
 
+
 class SurveyForm extends Component{
    
 
@@ -37,7 +38,7 @@ class SurveyForm extends Component{
 }
 function validate(values){
   const errors={}
-   errors.recipients=EmailValidation(errors.recipients || '');
+   errors.recipients=EmailValidation(values.recipients || '');
   _.each(SurveyFormField,({name})=>{
     if(!values[name]){
         errors[name]="You mush provided a value";
