@@ -31,7 +31,7 @@ const SurveyReviewForm=({onCancel,formValue,submitSurvey})=>{
 }
 
 function mapStateToProps(state){
-    console.log(state)
+   
 return {formValue:state.form.SurveyForm.values}
 }
 export default connect(mapStateToProps,action)(SurveyReviewForm);

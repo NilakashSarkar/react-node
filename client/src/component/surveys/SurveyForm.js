@@ -30,14 +30,14 @@ class SurveyForm extends Component{
       <i className="material-icons right">done</i>
       </button>
       </form>
-      
+     
         </div>
     )
     }
 }
 function validate(values){
   const errors={}
-//   errors.emails=EmailValidation(errors.emails || '');
+   errors.recipients=EmailValidation(errors.recipients || '');
   _.each(SurveyFormField,({name})=>{
     if(!values[name]){
         errors[name]="You mush provided a value";
