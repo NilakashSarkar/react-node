@@ -4,28 +4,26 @@ import {connect} from 'react-redux'
 import * as action from '../action'
 import Header from './Header'
 import {Landing} from './Landing';
-const surveys=()=><h2>surveys</h2>
-const Dashboard=()=><h2>Dashboard</h2>
-
-
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew'
 class App extends Component{
   componentDidMount(){
 this.props.fetchUser();
   }
   render(){
     return (
-      <div className='container'>
+     
         <BrowserRouter>
-        <div>
+       <div className='container'>
         <Header/>
         <Route exact path='/' component={Landing}></Route>
-        <Route path='/surveys/new' component={surveys}></Route>
-        <Route  path='/surveys' component={Dashboard}></Route>
+        <Route exact path='/surveys/new' component={SurveyNew}></Route>
+        <Route  exact path='/surveys' component={Dashboard}></Route>
         </div>
         </BrowserRouter>
         
         
-        </div>
+        
     );
   }
 }
