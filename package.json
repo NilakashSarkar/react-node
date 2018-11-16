@@ -13,6 +13,7 @@
     },
     "express": "^4.16.4",
     "init": "^0.1.2",
+    "localtunnel": "^1.9.1",
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.3.6",
     "nodemon": "^1.18.4",
@@ -26,13 +27,16 @@
     "stripe": "^6.13.0",
     "validator": "^10.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "forever": "^0.15.3"
+  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=FALSE npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=FALSE npm install --prefix client && npm run build --prefix client",
+    "webhook": "forever sendgrid_webhook.js"
   },
   "keywords": [],
   "author": "",
