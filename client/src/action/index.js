@@ -7,7 +7,7 @@ import {FETCH_USER} from './types'
         dispatch({type:FETCH_USER,payload:res.data})
     }
 
-    export const handelToken=(token) =>
+    export const handelToken=token =>
       async dispatch =>{
         const res= await axios.post('/api/stripe',token);
         dispatch({type:FETCH_USER,payload:res.data})

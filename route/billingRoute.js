@@ -1,9 +1,8 @@
 const keys=require('../config/keys')
 const stripe=require('stripe')(keys.stripeSecretkey);
-
-
+const requireLogin = require('../middleware/requireLogin');
 module.exports=app =>{
-    app.post('/api/stripe',async(req,res)=>{ 
+    app.post('/api/stripe',requireLogin,async(req,res)=>{ 
         // if(!req.user){
         //     res.status(401).send({error:'You must log In'})
         // }
